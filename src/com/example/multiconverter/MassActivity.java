@@ -14,21 +14,21 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-public class TemperatureActivity extends Activity {
+public class MassActivity extends Activity {
 
-	double temperature1 = 1000000;
-	double temperature2 = 1000000; // 1 celsius = 274.15 fahrenheit smallest temperature
+	double mass1 = 1000000;
+	double mass2 = 1000000; // 1000000mg = 1km smallest mass
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.temperature_main);
+		setContentView(R.layout.mass_main);
 
 		final EditText data1 = (EditText) findViewById(R.id.data1);
 		final EditText data2 = (EditText) findViewById(R.id.data2);
 
-		final RadioGroup rgTemperature1 = (RadioGroup) findViewById(R.id.temperature1);
-		final RadioGroup rgTemperature2 = (RadioGroup) findViewById(R.id.temperature2);
+		final RadioGroup rgMass1 = (RadioGroup) findViewById(R.id.mass1);
+		final RadioGroup rgMass2 = (RadioGroup) findViewById(R.id.mass2);
 
 		final ImageView swap = (ImageView) findViewById(R.id.swap);
 
@@ -50,7 +50,7 @@ public class TemperatureActivity extends Activity {
 			@Override
 			public void afterTextChanged(Editable s) {
 				if (!data1.getText().toString().equals("")) {
-					double aux = (temperature1 / temperature2)
+					double aux = (mass1 / mass2)
 							* Double.parseDouble(data1.getText().toString());
 					data2.setText(Double.toString(aux));
 				} else {
@@ -61,7 +61,7 @@ public class TemperatureActivity extends Activity {
 		});
 
 		// event listener on RadioGroup 1
-		rgTemperature1
+		rgMass1
 				.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
 					@Override
@@ -77,7 +77,7 @@ public class TemperatureActivity extends Activity {
 				});
 
 		// event listener on RadioGroup 2
-		rgTemperature2
+		rgMass2
 				.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
 					@Override
@@ -101,15 +101,15 @@ public class TemperatureActivity extends Activity {
 				data1.setText(aux);
 
 				// get the checked radio button rg1
-				int radioButtonID1 = rgTemperature1.getCheckedRadioButtonId();
+				int radioButtonID1 = rgMass1.getCheckedRadioButtonId();
 				// get the checked radio button rg2
-				int radioButtonID2 = rgTemperature2.getCheckedRadioButtonId();
+				int radioButtonID2 = rgMass2.getCheckedRadioButtonId();
 
 				// get the rb of rg1 checked of rg 2
-				RadioButton rg1_radioButton_checked = (RadioButton) rgTemperature1
+				RadioButton rg1_radioButton_checked = (RadioButton) rgMass1
 						.findViewById(radioButtonID2);
 				// get the rb of rg2 checked of rg 1
-				RadioButton rg2_radioButton_checked = (RadioButton) rgTemperature2
+				RadioButton rg2_radioButton_checked = (RadioButton) rgMass2
 						.findViewById(radioButtonID1);
 
 				rg1_radioButton_checked.setChecked(true);
@@ -120,32 +120,38 @@ public class TemperatureActivity extends Activity {
 
 	}
 
-	//update the length in mm
+	//update the mass in mg
 	private double process(int checkedId, int rg) {
 
-		double temperature = 1;
+		double mass = 1;
 
 		switch (checkedId) {
-		case R.id.celsius:
-			temperature = 1;
+		case R.id.kilogram:
+			mass = 1000000;
 			break;
-		case R.id.kelvin:
-			temperature = 274.15;
+		case R.id.pound:
+			mass = 453.59237;
 			break;
-		case R.id.fahrenheit:
-			temperature = 33.8;
+		case R.id.gram:
+			mass = 1000;
+			break;
+		case R.id.milligram:
+			mass = 1;
+			break;
+		case R.id.ounce:
+			mass = 28000.3495231;
 			break;
 		default:
 			break;
 		}
 
 		if (rg == 1) {
-			temperature1 = temperature;
+			mass1 = mass;
 		} else {
-			temperature2 = temperature;
+			mass2 = mass;
 		}
 
-		return temperature1 / temperature2;
+		return mass1 / mass2;
 	}
 
 	@Override
@@ -161,14 +167,14 @@ public class TemperatureActivity extends Activity {
 	    // Handle item selection
 	    switch (item.getItemId()) {
 	    case R.id.length:
-	    	Intent intent = new Intent(TemperatureActivity.this, MainActivity.class);
+	    	Intent intent = new Intent(MassActivity.this, MainActivity.class);
 	    	startActivity(intent);
 	        return true;
 	    case R.id.temperature:
+	    	intent = new Intent(MassActivity.this, TemperatureActivity.class);
+	    	startActivity(intent);
 	        return true;
 	    case R.id.mass:
-	    	intent = new Intent(TemperatureActivity.this, MassActivity.class);
-	    	startActivity(intent);
 	        return true;
 	    default:
 	        return super.onOptionsItemSelected(item);

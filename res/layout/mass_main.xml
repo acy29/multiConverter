@@ -1,0 +1,151 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Tabla"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="3" >
+
+    <TableRow
+        android:id="@+id/RowData"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/data1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal" >
+
+            <requestFocus />
+        </EditText>
+
+        <ImageView
+            android:id="@+id/swap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/swap"
+            android:src="@drawable/swap" />
+
+        <EditText
+            android:id="@+id/data2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="text" >
+        </EditText>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/RowName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/top" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/from" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/RowRadioGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioGroup
+            android:id="@+id/mass1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/kilogram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/kilogram" />
+
+            <RadioButton
+                android:id="@+id/pound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pound" />
+
+            <RadioButton
+                android:id="@+id/gram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gram" />
+
+            <RadioButton
+                android:id="@+id/milligram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/milligram" />
+
+            <RadioButton
+                android:id="@+id/ounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ounce" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <RadioGroup
+            android:id="@+id/mass2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/kilogram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/kilogram" />
+
+            <RadioButton
+                android:id="@+id/pound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pound" />
+
+            <RadioButton
+                android:id="@+id/gram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gram" />
+
+            <RadioButton
+                android:id="@+id/milligram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/milligram" />
+
+            <RadioButton
+                android:id="@+id/ounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ounce" />
+
+        </RadioGroup>
+    </TableRow>
+
+</TableLayout>

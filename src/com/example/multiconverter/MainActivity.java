@@ -120,7 +120,7 @@ public class MainActivity extends Activity {
 
 	}
 
-	//update the length in mm
+	// update the length in mm
 	private double process(int checkedId, int rg) {
 
 		double length = 1;
@@ -166,21 +166,26 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	
+
 	// listen menu
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-	    // Handle item selection
-	    switch (item.getItemId()) {
-	    case R.id.length:
-	        return true;
-	    case R.id.temperature:
-	    	Intent intent = new Intent(MainActivity.this, TemperatureActivity.class);
-	    	startActivity(intent);
-	        return true;
-	    default:
-	        return super.onOptionsItemSelected(item);
-	    }
+		// Handle item selection
+		switch (item.getItemId()) {
+		case R.id.length:
+			return true;
+		case R.id.temperature:
+			Intent intent = new Intent(MainActivity.this,
+					TemperatureActivity.class);
+			startActivity(intent);
+			return true;
+		case R.id.mass:
+			intent = new Intent(MainActivity.this, MassActivity.class);
+			startActivity(intent);
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 }

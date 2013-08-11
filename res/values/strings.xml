@@ -19,9 +19,18 @@
 	<string name="kelvin">kelvin</string>
 	<string name="fahrenheit">fahrenheit</string>
 	
+	<string name="kilogram">kilogram</string>
+	<string name="pound">pound</string>
+	<string name="gram">gram</string>
+	<string name="milligram">milligram</string>
+	<string name="ounce">ounce</string>
+	<string name="grain">grain</string>
+	<string name="stone">stone</string>
+	
 	<string name="swap">swap image</string>
 	
 	<string name="length">length</string>
 	<string name="temperature">temperature</string>
+	<string name="mass">mass</string>
 
 </resources>
